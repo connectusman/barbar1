@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonBadge, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
@@ -22,14 +22,53 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import './theme/style.css';
+
+import {chatbox, home, search, person} from 'ionicons/icons';
+import Test from './pages/Test';
+import Search from './pages/Search';
+import SearchResult from './pages/SearchResult';
+import SelectedShop from './pages/SelectedShop';
+import HaircutList from './pages/HaircutList';
 
 const App: React.FC = () => (
-  <IonApp>
+  <IonApp >
     <IonReactRouter>
-      <IonRouterOutlet>
+    <IonTabs>
+      
+    
+    <IonTabBar className="ion-padding" slot="bottom">
+    
+      <IonTabButton tab="home">
+        <IonIcon icon={home} />
+      </IonTabButton>
+
+      <IonTabButton tab="search">
+        <IonIcon icon={search} />
+      </IonTabButton>
+
+      <IonTabButton tab="chat">
+        <IonIcon icon={chatbox} />
+      </IonTabButton>
+
+      <IonTabButton tab="account">
+        <IonIcon icon={person}/>
+      </IonTabButton>
+    </IonTabBar>
+    
+    <IonRouterOutlet>
+    <Route path="/haircuts" component={HaircutList} exact={true} />
+    <Route path="/selectedshop" component={SelectedShop} exact={true} />
+    <Route path="/searchr" component={SearchResult} exact={true} />
+    <Route path="/search" component={Search} exact={true} />
+    <Route path="/test" component={Test} exact={true} />
         <Route path="/home" component={Home} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
+      
+  </IonTabs>
+  
+      
     </IonReactRouter>
   </IonApp>
 );

@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'SignPainter HouseScript';
+    src: url('./HouseScript.ttf');
+  }
+/** AppLogo **/
+.applogo{
+    font-family: 'SignPainter HouseScript';
+    font-size: 50px;
+   
+}
+.dividerline{
+    height: 1px;
+    background-color: honeydew;
+}
+.dividerline-cen{
+    height: 1px;
+    background-color: honeydew;
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.aligncenter{
+    justify-content: center;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 1s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
